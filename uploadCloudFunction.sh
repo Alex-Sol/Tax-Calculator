@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-4gj0t36t03087dcc --n quickstartFunctions --r --project "/Users/lizeng/WeChatProjects/Tax-Calculator" --report_first --report

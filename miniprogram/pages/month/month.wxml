@@ -1,0 +1,56 @@
+<!--pages/month/month.wxml-->
+<view class='center-bottom'>
+<view class="weui-cell">
+    <view class="weui-cell__bd">一月</view>
+      <view class="weui-cell__ft">{{monthSalary[0]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">二月</view>
+      <view class="weui-cell__ft">{{monthSalary[1]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">三月</view>
+      <view class="weui-cell__ft">{{monthSalary[2]}}元</view>
+    </view>
+    <view class="weui-cell">
+    <view class="weui-cell__bd">四月</view>
+      <view class="weui-cell__ft">{{monthSalary[3]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">五月</view>
+      <view class="weui-cell__ft">{{monthSalary[4]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">六月</view>
+      <view class="weui-cell__ft">{{monthSalary[5]}}元</view>
+    </view>
+    <view class="weui-cell">
+    <view class="weui-cell__bd">七月</view>
+      <view class="weui-cell__ft">{{monthSalary[6]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">八月</view>
+      <view class="weui-cell__ft">{{monthSalary[7]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">九月</view>
+      <view class="weui-cell__ft">{{monthSalary[8]}}元</view>
+    </view>
+    <view class="weui-cell">
+    <view class="weui-cell__bd">十月</view>
+      <view class="weui-cell__ft">{{monthSalary[9]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">十一月</view>
+      <view class="weui-cell__ft">{{monthSalary[10]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">十二月</view>
+      <view class="weui-cell__ft">{{monthSalary[11]}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">年终奖</view>
+      <view class="weui-cell__ft">{{}}元</view>
+    </view>
+
+</view>

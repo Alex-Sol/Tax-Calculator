@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<include src="/includes/top.wxml" />
+<!--列表-->
+
+<view class='list'>
+  <label class="weui-cells__title">个税前收入（元）</label>
+  <view class="weui-cell__bd">
+    <input class="weui-input" type='digit' placeholder="请输入你的个税前收入"  bindinput='pretaxProfitInput' name='pretax'></input>
+  </view>
+
+  <!--列表说明项-->
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">社保基数（元）</view>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="0" bindinput='socialInput'></input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">公积金基数（元）</view>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="0" bindinput='accumulationFundInput'></input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">公积金缴存比例</view>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="12" bindinput='accumulationRatioInput'>%</input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">专项扣除合计（元）</view>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="0" bindinput='specialDeductionInput'></input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title cells-end">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">起征点（元）</view>
+      <input class="weui-cell__ft ft3" type='digit' placeholder="5000" bindinput='startingPointInput'></input>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">年终奖（元）</view>
+      <input class="weui-cell__ft ft3" type='digit' placeholder="0" bindinput='bonusInput'></input>
+    </view>
+  </view>
+
+  <view class='count'>
+    <button bindtap='count' class="weui-btn" type="primary">计算</button>
+  </view>
+  <!-- <image class='footer' src="/images/footer.png"></image> -->
+</view>

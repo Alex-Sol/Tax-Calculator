@@ -1,0 +1,42 @@
+<!--pages/count/count.wxml-->
+<include src="/includes/top.wxml" />
+
+<view class='center'>
+  <!--center-top-->
+  <view class='center-top'>
+    <view class='salary-mouth'>年薪</view>
+    <view class='get'>到手所得</view>
+    <view class='get2'>
+      <view class='get-salary'>{{sumSalary}}</view>
+      <view class='yuan'>元</view>
+    </view>
+  </view>
+  <!--center-bottom-->
+  <view class='center-bottom'>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">税前收入</view>
+      <view class="weui-cell__ft">{{pretaxProfit}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">五险一金总计</view>
+      <view class="weui-cell__ft">{{sumFund}}元</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">个人所得税</view>
+      <view class="weui-cell__ft git-end">{{sumTax}}元</view>
+    </view>
+    <view class='count'>
+        <button bindtap='getMonthSalary' class="weui-btn" type="primary">月薪详细</button>
+    </view>
+    <!--back count-->
+    <view class='count'>
+        <button bindtap='backCount' class="weui-btn" type="primary" plain="false">返回重算</button>
+    </view>
+  </view>
+
+
+</view>
+
+<view class='footer'>
+  <image class='cloud' src='/images/cloud.png'></image>
+</view>

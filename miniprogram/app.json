@@ -1,0 +1,14 @@
+{
+  "pages": [
+      "pages/index/index",
+      "pages/count/count",
+      "pages/month/month"
+  ],
+  "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "个税计算器",
+      "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
