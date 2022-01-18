@@ -58,10 +58,6 @@ Page({
     })
   },
 
-  sumC: function (arr) {
-    return eval(arr.join("+"))
-  },
-
   /*计算函数*/
   count: function (e) {
     var pretaxProfit = parseFloat(this.data.pretaxProfit); //税前月收入
@@ -79,6 +75,7 @@ Page({
     var socialAccumulation = accumulationFund + socialFund; //社保公积金
     var specialDeduction = parseFloat(this.data.specialDeduction); //专项扣除
     var startingPoint = parseInt(this.data.startingPoint); //起征点
+    var bonus = parseFloat(this.data.bonus);
     var sumProfit = 0; //累计税前收入
     var sumStartingPoint = 0; //累计起征点
     var sumSocialAccumulationFund = 0; //累计社保公积金
@@ -139,15 +136,46 @@ Page({
       sumSalary += salary[i];
     }
 
-    sumTax = parseFloat(sumTax).toFixed(2);
-    sumSalary = parseFloat(sumSalary).toFixed(2);
+    if (bonus <= 36000) {
+      taxRatio = 0.03;
+      quickCutNumV = 0;
+    }
+    else if (bonus <= 144000) {
+      taxRatio = 0.1;
+      quickCutNumV = 2520;
+    }
+    else if (bonus <= 300000) {
+      taxRatio = 0.2;
+      quickCutNumV = 16920;
+    }
+    else if (bonus <= 420000) {
+      taxRatio = 0.25;
+      quickCutNumV = 31920;
+    }
+    else if (bonus <= 660000) {
+      taxRatio = 0.3;
+      quickCutNumV = 52920;
+    }
+    else if (bonus <= 960000) {
+      taxRatio = 0.35;
+      quickCutNumV = 85920;
+    }
+    else {
+      taxRatio = 0.45;
+      quickCutNumV = 181920;
+    }
 
-    var sumPretaxProfit = pretaxProfit * 12;
+    var bonusTax = bonus * taxRatio - quickCutNumV;
+    var bonusSalary = bonus - bonusTax;
+    sumSalary = parseFloat(sumSalary + bonusSalary).toFixed(2);
+    sumTax = parseFloat(sumTax + bonusTax).toFixed(2);
+
+    var sumPretaxProfit = pretaxProfit * 12 + bonus;
 
     if (pretaxProfit){
       wx.navigateTo({
         delta: 2,
-        url: '../count/count?sumSalary=' + sumSalary + '&pretaxProfit=' + sumPretaxProfit + '&sumFund=' + sumSocialAccumulationFund.toFixed(2) + '&sumTax=' + sumTax + '&monthSalary=' + salary,
+        url: '../count/count?sumSalary=' + sumSalary + '&pretaxProfit=' + sumPretaxProfit + '&sumFund=' + sumSocialAccumulationFund.toFixed(2) + '&sumTax=' + sumTax + '&bonusSalary=' + bonusSalary + '&monthSalary=' + salary,
       });
     }
     else{

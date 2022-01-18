@@ -16,6 +16,7 @@ Page({
         pretaxProfit: options.pretaxProfit,
         sumFund: options.sumFund,
         sumTax: options.sumTax,
+        bonusSalary: options.bonusSalary,
         monthSalary: options.monthSalary
       })
     },
@@ -23,7 +24,7 @@ Page({
       var monthSalary = this.data.monthSalary.split(',');
       wx.navigateTo({
         delta: 2,
-        url: '../month/month?monthSalary=' + monthSalary,
+        url: '../month/month?monthSalary=' + monthSalary + '&bonusSalary=' + this.data.bonusSalary,
       })
     },
     backCount: function(e) {

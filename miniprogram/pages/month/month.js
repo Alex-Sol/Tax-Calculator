@@ -12,7 +12,8 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            monthSalary: options.monthSalary.split(',')
+            monthSalary: options.monthSalary.split(','),
+            bonusSalary: options.bonusSalary
           });
           
     },

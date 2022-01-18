@@ -50,7 +50,7 @@
     </view>
     <view class="weui-cell">
       <view class="weui-cell__bd">年终奖</view>
-      <view class="weui-cell__ft">{{}}元</view>
+      <view class="weui-cell__ft">{{bonusSalary}}元</view>
     </view>
 
 </view>
