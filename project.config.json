@@ -1,12 +1,7 @@
 {
     "description": "项目配置文件",
     "packOptions": {
-        "ignore": [
-            {
-                "type": "file",
-                "value": ".eslintrc.js"
-            }
-        ]
+        "ignore": []
     },
     "setting": {
         "bundle": false,
@@ -24,7 +19,7 @@
         "newFeature": false,
         "uglifyFileName": false,
         "uploadWithSourceMap": true,
-        "useIsolateContext": true,
+        "useIsolateContext": false,
         "nodeModules": false,
         "enhance": true,
         "useMultiFrameRuntime": true,
@@ -39,9 +34,9 @@
         "minifyWXML": true
     },
     "compileType": "miniprogram",
-    "libVersion": "2.19.4",
-    "appid": "wxed6f8b38999fef46",
-    "projectname": "helloworld-1",
+    "libVersion": "2.21.3",
+    "appid": "wx57210ee932ffada3",
+    "projectname": "Tax-Calculator",
     "debugOptions": {
         "hidedInDevtools": []
     },
