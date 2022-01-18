@@ -5,21 +5,21 @@
 <view class='list'>
   <label class="weui-cells__title">个税前收入（元）</label>
   <view class="weui-cell__bd">
-    <input class="weui-input" type='digit' placeholder="请输入你的个税前收入"  bindinput='pretaxProfitInput' name='pretax'></input>
+    <input class="weui-input" type='digit' placeholder="请输入你的个税前收入"  bindinput='pretaxProfitInput' name='pretaxProfit'></input>
   </view>
 
   <!--列表说明项-->
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
       <view class="weui-cell__bd">社保基数（元）</view>
-      <input class="weui-cell__ft ft2" type='digit' placeholder="0" bindinput='socialInput'></input>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="{{pretaxProfit}}" bindinput='socialInput'></input>
     </view>
   </view>
 
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
       <view class="weui-cell__bd">公积金基数（元）</view>
-      <input class="weui-cell__ft ft2" type='digit' placeholder="0" bindinput='accumulationFundInput'></input>
+      <input class="weui-cell__ft ft2" type='digit' placeholder="{{pretaxProfit}}" bindinput='accumulationFundInput'></input>
     </view>
   </view>
 

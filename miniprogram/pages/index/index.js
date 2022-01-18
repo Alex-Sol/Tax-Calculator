@@ -66,7 +66,13 @@ Page({
   count: function (e) {
     var pretaxProfit = parseFloat(this.data.pretaxProfit); //税前月收入
     var socialBase = parseFloat(this.data.social); //社保基数
+    if (socialBase === 0){
+      socialBase = parseFloat(this.data.pretaxProfit);
+    }
     var accumulationBase = parseFloat(this.data.accumulationFund); //公积金基数
+    if (accumulationBase === 0){
+      accumulationBase = parseFloat(this.data.pretaxProfit);
+    }
     var accumulationRatio = parseFloat(this.data.accumulationRatio); //公积金比例
     var accumulationFund = accumulationBase * (accumulationRatio / 100); //公积金
     var socialFund = socialBase * (0.02 + 0.08 + 0.005); //社保金
@@ -120,6 +126,7 @@ Page({
         quickCutNumV = 181920;
       }
       tax[month] = parseFloat((salaryTax * taxRatio - quickCutNumV - sumTax).toFixed(2));
+      tax[month] = tax[month] > 0 ? tax[month] : 0;
       sumTax += tax[month];
       salary[month] = parseFloat((pretaxProfit - socialAccumulation - tax[month]).toFixed(2));
     }
@@ -131,13 +138,16 @@ Page({
     for (var i = 0; i < salary.length; i++) {
       sumSalary += salary[i];
     }
+
+    sumTax = parseFloat(sumTax).toFixed(2);
+    sumSalary = parseFloat(sumSalary).toFixed(2);
+
     var sumPretaxProfit = pretaxProfit * 12;
-    // salary = JSON.stringify(salary);
 
     if (pretaxProfit){
       wx.navigateTo({
         delta: 2,
-        url: '../count/count?sumSalary=' + sumSalary + '&pretaxProfit=' + sumPretaxProfit + '&sumFund=' + sumSocialAccumulationFund.toFixed(2) + '&sumTax=' + sumTax.toFixed(2) + '&monthSalary=' + salary,
+        url: '../count/count?sumSalary=' + sumSalary + '&pretaxProfit=' + sumPretaxProfit + '&sumFund=' + sumSocialAccumulationFund.toFixed(2) + '&sumTax=' + sumTax + '&monthSalary=' + salary,
       });
     }
     else{
