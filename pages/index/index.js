@@ -235,7 +235,7 @@ Page({
     return {
       title: '个税计算器',
 
-      path: '/page/index/index',
+      path: '/pages/index/index',
 
       imageUrl: '/images/logo.png'
     }
